@@ -26,9 +26,10 @@ const AlertIcon = () => (
 );
 
 const PRIORITY_STYLES = {
-  high: "bg-red-50 text-red-600 border-red-100",
-  medium: "bg-amber-50 text-amber-600 border-amber-100",
-  low: "bg-gray-100 text-gray-500 border-gray-200",
+  High: "bg-red-50 text-red-600 border-red-100",
+  Medium: "bg-amber-50 text-amber-600 border-amber-100",
+  Low: "bg-gray-100 text-gray-500 border-gray-200",
+  Urgent: "bg-green-100 text-green-500 border-green-200",
 };
 
 const STATUS_STYLES = {
@@ -51,17 +52,9 @@ export default function Customer({ singleCustomer, onClick }) {
 
   const [hovered, setHovered] = useState(false);
 
-  const initials = customer?.name
-    ? customer.name
-        .split(" ")
-        .map((n) => n[0])
-        .join("")
-        .toUpperCase()
-        .slice(0, 2)
-    : "??";
-
+  
   const statusStyle = STATUS_STYLES[status] ?? STATUS_STYLES.open;
-  const priorityStyle = PRIORITY_STYLES[priority] ?? PRIORITY_STYLES.low;
+  const priorityStyle = PRIORITY_STYLES[priority] ?? PRIORITY_STYLES.Low;
 
   return (
     <div
@@ -115,10 +108,8 @@ export default function Customer({ singleCustomer, onClick }) {
         {/* Assignee + Date */}
         <div className="flex items-center gap-3 text-gray-400">
           <div className="flex items-center gap-1.5">
-            <div className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-[9px] font-bold">
-              {initials}
-            </div>
-            <span className="text-gray-500 font-medium">{customer?.name}</span>
+     
+            <span className="text-gray-500 font-medium">{customer}</span>
           </div>
           <div className="flex items-center gap-1">
             <CalendarIcon />
