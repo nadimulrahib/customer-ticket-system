@@ -24,19 +24,19 @@ const Navbar = () => {
   return (
     <nav
       className={`sticky top-0 z-50 bg-white transition-all duration-300 ${
-        scrolled ? "border-b border-gray-200 shadow-sm" : "border-b border-transparent"
+        scrolled
+          ? "border-b border-gray-200 shadow-sm"
+          : "border-b border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-
         {/* Logo */}
         <a
           href="#"
           className="text-[18px] font-bold text-zinc-900 tracking-tight no-underline shrink-0"
         >
-          CS{" "}
-          <span className="text-violet-600 font-normal">—</span>{" "}
-          Ticket System
+          CS <span className="text-violet-600 font-normal">—</span> Ticket
+          System
         </a>
 
         {/* Desktop Nav Links */}
@@ -78,14 +78,30 @@ const Navbar = () => {
                        border-none bg-transparent cursor-pointer"
           >
             {menuOpen ? (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <line x1="3" y1="18" x2="21" y2="18" />
