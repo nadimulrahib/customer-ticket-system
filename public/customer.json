@@ -95,7 +95,7 @@
     "description": "Pages take too long to load, especially the product and checkout pages.",
     "customer": "Ayesha Siddika",
     "priority": "High",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-10"
   },
   {
@@ -104,7 +104,7 @@
     "description": "Customer clicked place order once but the system created two separate orders.",
     "customer": "Mahmudul Hasan",
     "priority": "Urgent",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-09"
   },
   {
@@ -113,7 +113,7 @@
     "description": "Live chat opens successfully but no agent replies to customer messages.",
     "customer": "Tanjila Islam",
     "priority": "Medium",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-08"
   },
   {
@@ -122,7 +122,7 @@
     "description": "Customer received a different product than the one shown in the order summary.",
     "customer": "Naimur Rahman",
     "priority": "Urgent",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-07"
   },
   {
@@ -131,7 +131,7 @@
     "description": "The mobile app closes automatically whenever the customer tries to complete checkout.",
     "customer": "Sadia Afrin",
     "priority": "High",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-06"
   },
   {
@@ -140,7 +140,7 @@
     "description": "Email and push notification preferences revert back after saving changes.",
     "customer": "Imran Hossain",
     "priority": "Low",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-05"
   },
   {
@@ -149,7 +149,7 @@
     "description": "Homepage promotional banner is covering product cards on smaller laptop screens.",
     "customer": "Jui Akter",
     "priority": "Low",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-04"
   },
   {
@@ -158,7 +158,7 @@
     "description": "Customer enters the correct OTP but the system still shows verification failed.",
     "customer": "Rakibul Islam",
     "priority": "High",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-03"
   },
   {
@@ -167,7 +167,7 @@
     "description": "Gift card was redeemed successfully but the updated balance is not visible in the wallet.",
     "customer": "Sharmin Sultana",
     "priority": "Medium",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-02"
   },
   {
@@ -176,7 +176,7 @@
     "description": "Customer wrote a review and rating, but clicking submit does not save the review.",
     "customer": "Fahim Ahmed",
     "priority": "Low",
-    "status": "Open",
+    "status": "In_Progress",
     "createdAt": "2025-09-01"
   }
 ]
