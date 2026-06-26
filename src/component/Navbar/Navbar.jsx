@@ -29,7 +29,7 @@ const Navbar = () => {
           : "border-b border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className=" mx-auto  h-16 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#"
