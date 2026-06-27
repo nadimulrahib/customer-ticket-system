@@ -9,6 +9,8 @@ const Customers = ({ customersPromise }) => {
       <div className="card grid grid-cols-1 lg:grid-cols-2 gap-6 w-[60%] mt-12">
         {customersData.map((singleCustomer) => (
           <Customer key={singleCustomer.id} singleCustomer={singleCustomer}></Customer>
+
+          
         ))}
       </div>
     </div>
