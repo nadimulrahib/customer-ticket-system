@@ -46,24 +46,42 @@ const STATUS_STYLES = {
   },
 };
 
-export default function Customer({ singleCustomer, onClick }) {
+export default function Customer({
+  singleCustomer,
+  onClick,
+  setCardClick,
+  // cardClick,
+}) {
   const { id, title, description, customer, priority, status, createdAt } =
     singleCustomer;
 
   const [hovered, setHovered] = useState(false);
 
-  
+  const handleCardClick = () => {
+    setCardClick((prev) => {
+      const exists = prev.find((item) => item.id === id);
+
+      if (exists) {
+        alert("Already Selected");
+        return prev;
+      }
+
+      return [...prev, singleCustomer];
+    });
+  };
+
   const statusStyle = STATUS_STYLES[status] ?? STATUS_STYLES.open;
   const priorityStyle = PRIORITY_STYLES[priority] ?? PRIORITY_STYLES.Low;
 
   return (
     <div
+      onClick={handleCardClick}
       role="button"
       tabIndex={0}
-      onClick={onClick}
       onKeyDown={(e) => e.key === "Enter" && onClick?.()}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      onClick={() => handleCardClick({ singleCustomer })}
       className={`
         bg-white rounded-xl border border-gray-200 p-5 w-full max-w-md
         cursor-pointer select-none outline-none
@@ -108,7 +126,6 @@ export default function Customer({ singleCustomer, onClick }) {
         {/* Assignee + Date */}
         <div className="flex items-center gap-3 text-gray-400">
           <div className="flex items-center gap-1.5">
-     
             <span className="text-gray-500 font-medium">{customer}</span>
           </div>
           <div className="flex items-center gap-1">
