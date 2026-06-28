@@ -4,6 +4,7 @@ import Banner from "./component/Banner/Banner";
 import Customers from "./component/Customers/Customers";
 import Navbar from "./component/Navbar/Navbar";
 import TaskStatus from "./component/TaskStatus/TaskStatus";
+import ResolveStatus from "./component/ResolveStatus/ResolveStatus";
 
 const customers = async () => {
   const customersData = await fetch("/customer.json");
@@ -11,19 +12,28 @@ const customers = async () => {
   return res;
 };
 
+const customersPromise = customers();
 function App() {
-  const customersPromise = customers();
-  console.log(customersPromise);
-
   const [cardClick, setCardClick] = useState([]);
+  const [resolve, setResolve] = useState([]);
 
+  const handleCompleted = (customersData) => {
 
+    const filterData = cardClick.filter((p) => p.id !== customersData.id);
+    setCardClick(filterData);
+
+    const resolveData = resolve.filter((r)=>r.id!==customersData.id)
+    setResolve(resolveData)
+
+    setResolve((prev)=>[...prev,customersData])
+
+  };
 
   return (
     <>
       <div className="app container mx-auto">
         <Navbar />
-        <Banner cardClick={cardClick}></Banner>
+        <Banner cardClick={cardClick} resolve={resolve}></Banner>
         <div className="cardAndTaskWrap flex gap-9 mt-10">
           <Suspense
             fallback={<span className="loading loading-ring loading-xl"></span>}
@@ -35,7 +45,14 @@ function App() {
               cardClick={cardClick}
             ></Customers>
           </Suspense>
-          <TaskStatus cardClick={cardClick}></TaskStatus>
+
+          <div className="taskbar flex flex-col gap-8">
+            <TaskStatus
+              cardClick={cardClick}
+              handleCompleted={handleCompleted}
+            ></TaskStatus>
+            <ResolveStatus resolve={resolve}></ResolveStatus>
+          </div>
         </div>
       </div>
     </>

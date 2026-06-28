@@ -3,7 +3,6 @@ import Customer from "../Customer/Customer";
 
 const Customers = ({ customersPromise, setCardClick,cardClick }) => {
   const customersData = use(customersPromise);
-  console.log(customersData);
   return (
     <div>
       <div className="card grid grid-cols-1 lg:grid-cols-2 gap-6">
