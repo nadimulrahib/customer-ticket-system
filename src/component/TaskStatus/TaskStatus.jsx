@@ -1,6 +1,6 @@
 import TaskCards from "../TaskCards/TaskCards";
 
-const TaskStatus = ({ cardClick }) => {
+const TaskStatus = ({ cardClick,handleCompleted }) => {
 
   return (
     <div>
@@ -11,7 +11,7 @@ const TaskStatus = ({ cardClick }) => {
       cardClick.length===0?<p>Select a ticket to add to Task Status</p>     
      : <div className="customer flex flex-col gap-5">
         {cardClick.map((customer) => (
-          <TaskCards customer={customer}></TaskCards>
+          <TaskCards customer={customer} handleCompleted={handleCompleted}></TaskCards>
         ))}
       </div>
     }
