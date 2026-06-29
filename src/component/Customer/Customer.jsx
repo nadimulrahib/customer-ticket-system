@@ -65,7 +65,6 @@ export default function Customer({
         alert("Already Selected");
         return prev;
       }
-
       return [...prev, singleCustomer];
     });
   };
