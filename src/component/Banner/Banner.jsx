@@ -1,4 +1,4 @@
-const Banner = ({cardClick, resolve}) => {
+const Banner = ({ cardClick, resolve }) => {
   return (
     <div>
       <div className="card-wrap grid grid-cols-2 gap-8 mt-10">
